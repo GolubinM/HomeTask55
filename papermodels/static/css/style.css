@@ -119,3 +119,9 @@ h1 {
 .model_img{
   max-width: 200px;
 }
+.footer {
+    min-height: 120px;
+}
+ a {
+    text-decoration: none;
+}
