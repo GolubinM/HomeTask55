@@ -1,0 +1,121 @@
+body {
+  background-color: rgb(239, 239, 239);
+  text-shadow: 1px 1px 1px rgb(150, 150, 150);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
+}
+
+.content {
+  padding: 5px 35px;
+  /* background-color: rgb(231, 231, 232); */
+}
+
+.logo {
+  display: inline-block;
+  margin: 10px auto 2px 30px;
+  max-width: 200px;
+}
+.menu .wrap {
+  display: flex;
+  flex: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  font-size: 20px;
+  padding-right: 50px;
+}
+.menu li {
+  padding: 5px 15px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 95%;
+  min-height: 960px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(84, 84, 106, 0.3));
+}
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 60px;
+  flex-direction: column;
+}
+
+.start {
+  line-height: 2em;
+}
+h1 {
+  margin: 0px 40px;
+}
+.title {
+  font-size: x-large;
+  font-weight: 800;
+  padding: 10px 25px;
+}
+.back_img {
+  width: 100%;
+  display: block;
+  margin: 0px auto;
+  align-items: center;
+  margin-top: -10px;
+}
+.start {
+  font-size: large;
+}
+.categories_img {
+  width: 250px;
+}
+
+.element {
+  display: flex;
+  background-color: rgb(225, 225, 225);
+  flex-basis: 120px;
+  border: 6px solid #fff;
+  margin: 20px 20px;
+  padding: 20px 30px;
+}
+
+.text_part {
+  display: flex;
+  padding: 0 40px;
+  margin-top: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.modellist {
+  padding: 5px 30px;
+  font-size: 2em;
+  margin: 0;
+}
+.modellist :hover {
+  color: rgb(80, 95, 21);
+  text-shadow: 2px 3px 3px rgb(150, 150, 150);
+  
+}
+
+.descripion {
+  font-size: 1em;
+}
+.proj_number{
+  padding: 0 5px;
+}
+
+.models{
+  display: flex;
+  background-color: rgb(225, 225, 225);
+  border: 6px solid #fff;
+  margin: 10px 10px;
+  padding: 20px 30px;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.model_img{
+  max-width: 200px;
+}

@@ -1,0 +1,17 @@
+{% extends 'papermodels/base.html' %}
+{% load static %}
+{% block content %}
+<h1 class="projects">*-КАТЕГОРИИ БУМАЖНЫХ МОДЕЛЕЙ-*</h1>
+<div class="categories">
+    {% for proj in projects %}
+    <div class="element">
+        <p class="proj_number">{{ proj.id }}</p>
+        <a href="{% url 'papermodels:project' proj.id %}"><img class="categories_img" src="{{ proj.image.url }}" alt="img"></a>
+        <div class="text_part">
+            <p class="modellist"><a href="{% url 'papermodels:project' proj.id %}" class="modellink"> *- {{ proj.title }} -* </a></p>
+            <p class="descripion">{{ proj.description }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

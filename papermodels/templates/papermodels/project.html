@@ -1,0 +1,15 @@
+{% extends 'papermodels/base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="cat_title">{{ cat_title }}.<br></h2>
+<h4>Моделей: {{ project.count }}</h4>
+<div class="models">
+    {% for model in project %}
+    <div class="elements">
+        <h2 class="top"><a href="">{{ model.title }}</a></h2>
+        <a href="{{ model.upload.url }}" target="_blank"><img class="model_img" src="{{ model.image.url }}" alt="img"></a>
+        <div class="blog_text"><p>{{ model.description | striptags | truncatechars:10 }}</p></div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

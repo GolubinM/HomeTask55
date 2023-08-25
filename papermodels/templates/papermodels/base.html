@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type='image/x-icon' href="{% static 'papermodels/favicon.ico' %}">
+</head>
+<body>
+<div class="container">
+<div class="menu">
+    <div class="wrap">
+        <div class="logo">
+            <a href="{% url 'main' %}">
+                <img class="logo" src="{% static 'papermodels/logo.png' %}" alt="logo">
+            </a>
+        </div>
+        <ul>
+            <li><a href="{% url 'main' %}">Главная</a></li>
+            <li><a href="{% url 'papermodels:projects' %}">Категории моделей</a></li>
+            <li><a href="{% url 'main' %}">Контакты</a></li>
+        </ul>
+
+    </div>
+</div>
+<h1 class="title">МОДЕЛИ ИЗ БУМАГИ</h1>
+<div class="content">
+    <div class="wrap">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</div>
+</body>
+</html>
