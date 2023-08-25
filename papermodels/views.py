@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from .models import PaperModels, PaperModelsCategories
+
+from .forms import AddPostForm
+from .models import *
+from django.contrib import messages
 
 
 def main(request):
@@ -19,15 +22,17 @@ def project(request, model_id):
                "cat_title": category_title}
     return render(request, 'papermodels/project.html', context=context)
 
-# def upload_file(request):
-#     # обработать создание записи в БД, загрузку файлов с эскизом и pdf-файлом
-#     # https://djangodoc.ru/3.1/ref/models/fields/#django.db.models.FileField
-#     if request.method == 'POST':
-#         form = ModelFormWithFileField(request.POST, request.FILES)
-#         if form.is_valid():
-#             # file is saved
-#             form.save()
-#             return HttpResponseRedirect('/success/url/')
-#     else:
-#         form = ModelFormWithFileField()
-#     return render(request, 'upload.html', {'form': form})
+
+def upload(request):
+    if request.method == 'POST':
+        form = AddPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    else:
+        form = AddPostForm()
+    return render(request, 'papermodels/upload.html', {'form': form})
+
+
+def contacts(request):
+    conts = Contacts.objects.all()
+    return render(request, 'papermodels/contacts.html', {'contacts': conts})

@@ -100,6 +100,7 @@ h1 {
 
 .descripion {
   font-size: 1em;
+  text-indent:1em;
 }
 .proj_number{
   padding: 0 5px;
@@ -119,9 +120,20 @@ h1 {
 .model_img{
   max-width: 200px;
 }
+
+.contacts{
+  justify-content: flex-start;
+  flex-wrap: none;
+}
 .footer {
     min-height: 120px;
 }
  a {
     text-decoration: none;
+}
+
+.add_model_btn{
+  padding: 4px;
+  margin-left: 20px;
+  
 }

@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
 class PaperModelsCategories(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
@@ -18,6 +17,15 @@ class PaperModels(models.Model):
     upload = models.FileField(upload_to='papermodels/uploads')
     category = models.ForeignKey(PaperModelsCategories, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Contacts(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    url = models.URLField(blank=True)
 
     def __str__(self):
         return self.title

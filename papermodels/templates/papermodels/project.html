@@ -10,7 +10,7 @@
 {% endif %}
 
 <h2 class="cat_title">{{ cat_title }}.<br></h2>
-<h4>Моделей: {{ project.count }}</h4>
+<h4>Моделей: {{ project.count }}  <a class="add_model" href="{% url 'papermodels:upload'%}"> + Добавить модель</a> </h4>
 <div class="models">
     {% for model in project %}
     <div class="elements">
