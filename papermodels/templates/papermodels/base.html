@@ -11,15 +11,16 @@
 <div class="container">
 <div class="menu">
     <div class="wrap">
-        <div class="logo">
-            <a href="{% url 'main' %}">
-                <img class="logo" src="{% static 'papermodels/logo.png' %}" alt="logo">
-            </a>
-        </div>
-        <ul>
-            <li><a href="{% url 'main' %}">Главная</a></li>
-            <li><a href="{% url 'papermodels:projects' %}">Категории моделей</a></li>
-            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+        <ul class="menu">
+            <li ><a href="{% url 'main' %}"><img class="logo" src="{% static 'papermodels/logo.png' %}" alt="logo"></a></li>
+            <li class="text"><a href="{% url 'main' %}">Главная</a></li>
+            <li class="text"><a href="{% url 'papermodels:projects' %}">Категории моделей</a></li>
+            <li class="text"><a href="{% url 'contacts' %}">Контакты</a></li>
+            {% if request.user.is_authenticated %}
+            <li class="text last">{{ user.username }} | <a href="{% url 'papermodels:logout' %}">Выйти</a></li>
+            {% else %}
+            <li class="text last"><a href="{% url 'papermodels:register' %}">Регистрация</a> | <a href="{% url 'login' %}">Авторизация</a></li>
+            {% endif %}
         </ul>
 
     </div>

@@ -10,27 +10,64 @@ body {
   /* background-color: rgb(231, 231, 232); */
 }
 
-.logo {
-  display: inline-block;
-  margin: 10px auto 2px 30px;
-  max-width: 200px;
-}
 .menu .wrap {
-  display: flex;
-  flex: wrap;
-  justify-content: space-around;
-  align-items: center;
+  list-style: none;
 }
 
-.menu ul {
-  display: flex;
-  list-style: none;
-  font-size: 20px;
-  padding-right: 50px;
-}
-.menu li {
+
+
+/* .menu li {
   padding: 5px 15px;
 }
+.menu .right_side {
+  float: right;
+} */
+
+ul {
+  list-style: none;
+}
+ul.menu {
+  margin: 0;
+  padding: 0;
+  color: #2a2a2a;
+  font-size: 20px;
+  overflow: hidden;
+}
+ul.menu li {
+  float: left;
+  margin: 0 10px 0px 30px;
+  padding-top: 5px;
+}
+
+ul.menu li.last {
+  float: right;
+  padding-right: 40px;
+}
+
+ul.menu li a {
+  color: #171717;
+  text-decoration: none;
+}
+ul.menu li a:hover {
+  color: #9d9d9d;
+}
+
+.logo {
+  /* display: inline-block; */
+  /* margin: 0px auto 2px 30px; */
+  /* padding: 0; */
+  max-width: 200px;
+}
+
+ul.menu img.logo {
+  margin: 0px auto 2px 30px;
+  padding-top: 0;
+}
+
+ul.menu li.text {
+  margin-top: 35px;
+}
+
 .container {
   margin: 0 auto;
   max-width: 95%;
@@ -95,18 +132,17 @@ h1 {
 .modellist :hover {
   color: rgb(80, 95, 21);
   text-shadow: 2px 3px 3px rgb(150, 150, 150);
-  
 }
 
 .descripion {
   font-size: 1em;
-  text-indent:1em;
+  text-indent: 1em;
 }
-.proj_number{
+.proj_number {
   padding: 0 5px;
 }
 
-.models{
+.models {
   display: flex;
   background-color: rgb(225, 225, 225);
   border: 6px solid #fff;
@@ -117,23 +153,45 @@ h1 {
   flex-wrap: wrap;
   align-content: flex-start;
 }
-.model_img{
+.model_img {
   max-width: 200px;
 }
 
-.contacts{
+.contacts {
   justify-content: flex-start;
   flex-wrap: none;
 }
 .footer {
-    min-height: 120px;
+  min-height: 120px;
 }
- a {
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.add_model_btn{
+.add_model_btn {
   padding: 4px;
   margin-left: 20px;
-  
+}
+.form-label {
+  display: inline-block;
+  min-width: 230px;
+  vertical-align: top;
+  box-shadow: 2px 5px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 0px 20px;
+}
+
+.form-input,.btn{
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  outline-color: #9d9d9d;
+  border: none;
+  padding: 5px;
+}
+.btn{
+  margin-left: 20px;
+  min-width: 100px;
+}
+
+.last {
+  float: right;
+  margin-right: 20px;
 }

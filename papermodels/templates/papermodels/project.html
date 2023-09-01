@@ -10,16 +10,28 @@
 {% endif %}
 
 <h2 class="cat_title">{{ cat_title }}.<br></h2>
-<h4>Моделей: {{ project.count }}  <a class="add_model" href="{% url 'papermodels:upload'%}"> + Добавить модель</a> </h4>
+<h4>Моделей: {{ project.count }} <a class="add_model" href="{% url 'papermodels:upload'%}"> + Добавить модель</a>
+    {% if request.user.is_authenticated %}
+    <em class="last">Нажмите на выбранную модель чтобы загрузить инструкцию</em>
+    {% else %}
+    <em class="last">Необходимо зарегистрироваться и авторизоваться для загрузки моделей</em>
+    {% endif %}
+</h4>
 <div class="models">
     {% for model in project %}
     <div class="elements">
+        {% if request.user.is_authenticated %}
         <h2 class="top"><a href="{{ model.upload.url }}" target="_blank">{{ model.title }}</a></h2>
         <a href="{{ model.upload.url }}" target="_blank"><img class="model_img" src="{{ model.image.url }}"
                                                               alt="img"></a>
-        <div class="blog_text"><p>{{ model.description | striptags | truncatechars:10 }}</p></div>
+        {% else %}
+        <h2 class="top"><a href="">{{ model.title }}</a></h2>
+        <a href=""><img class="model_img" src="{{ model.image.url }}" alt="img"></a>
+        {% endif %}
+
+        <div class="blog_text"><p>{{ model.description | striptags | truncatechars:18 }}</p></div>
     </div>
     {% endfor %}
 </div>
-<div class="footer"> </div>
+<div class="footer"></div>
 {% endblock %}

@@ -1,10 +1,13 @@
 from django.urls import path
-from . import views
+from .views import *
 
 app_name = 'papermodels'
 
 urlpatterns = [
-    path('', views.projects, name='projects'),
-    path('<int:model_id>/', views.project, name='project'),
-    path('upload/', views.upload, name='upload'),
+    path('', projects, name='projects'),
+    path('<int:model_id>/', project, name='project'),
+    path('upload/', upload, name='upload'),
+    path('register/', RegisterUser.as_view(), name='register'),
+    # path("login/", LoginUser.as_view(), name='login'),
+    path("logout/", logout_user, name="logout"),
 ]
